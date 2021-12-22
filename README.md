@@ -4,6 +4,15 @@ https://www.freecodecamp.org/news/react-firebase-authentication-and-crud-operati
 
 ```
 npx create-react-app react-firebase-v9
+
+npm install -g jshint
+npm install firebase react-router-dom
+npm install @mui/material @emotion/react @emotion/styled
+npm install react-notifications
+npm install dotenv --save
+npm install firebase
+npm install -g firebase-tools
+
 ```
 
 # Getting Started with Create React App
