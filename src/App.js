@@ -21,7 +21,10 @@ function App() {
       signInWithEmailAndPassword(authentication, email, password)
         .then((response) => {
           navigate('/home')
-          sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+          //sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+          console.log('QQsignInWithEmailAndPassword')
+          console.log(response)
+          sessionStorage.setItem('signInResponse', response)
         })
         .catch((error) => {
           console.log(error.code)
@@ -37,6 +40,8 @@ function App() {
       createUserWithEmailAndPassword(authentication, email, password)
         .then((response) => {
           navigate('/home')
+          console.log('createUserWithEmailAndPassword')
+          console.log(response)
           sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
         })
         .catch((error) => {
