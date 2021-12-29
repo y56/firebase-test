@@ -21,10 +21,9 @@ function App() {
       signInWithEmailAndPassword(authentication, email, password)
         .then((response) => {
           navigate('/home')
-          //sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
-          console.log('QQsignInWithEmailAndPassword')
+          console.log('XD signInWithEmailAndPassword')
           console.log(response)
-          sessionStorage.setItem('signInResponse', response)
+          sessionStorage.setItem('idToken', response._tokenResponse.idToken)
         })
         .catch((error) => {
           console.log(error.code)
@@ -40,9 +39,9 @@ function App() {
       createUserWithEmailAndPassword(authentication, email, password)
         .then((response) => {
           navigate('/home')
-          console.log('createUserWithEmailAndPassword')
+          console.log('XD createUserWithEmailAndPassword')
           console.log(response)
-          sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+          sessionStorage.setItem('idToken', response._tokenResponse.idToken)
         })
         .catch((error) => {
           if (error.code === 'auth/email-already-in-use') {
@@ -53,7 +52,7 @@ function App() {
   }
 
   useEffect(() => {
-    let authToken = sessionStorage.getItem('Auth Token')
+    let authToken = sessionStorage.getItem('idToken')
 
     if (authToken) {
       navigate('/home')
@@ -97,3 +96,4 @@ function App() {
 }
 
 export default App;
+
