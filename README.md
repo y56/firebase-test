@@ -13,6 +13,7 @@ npm install dotenv --save
 npm install firebase
 npm install -g firebase-tools
 
+
 npm run build
 
 firebase deploy
